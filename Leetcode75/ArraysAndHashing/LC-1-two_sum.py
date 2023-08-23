@@ -39,6 +39,8 @@ class Solution:
 
 
 ## Javascript Solution
+## time complexity: O(n) bc we are iterating through the array once and the lookup time for hash is O(1)
+## space complexity: O(n) bc we are storing the values in the hash table
 
 var twoSum = function(nums, target) {
    let obj = {};
