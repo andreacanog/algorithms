@@ -42,3 +42,31 @@ class Solution:
                 return False
         
         return True
+
+
+
+# JavaScript Solution
+
+## Time: O(n) bc we loop through s and t once each (2n)
+## Space: O(n) bc we used a hashmap to store the count of each character in s and t (2n)
+
+var isAnagram = function(s, t) {
+    if (s.length != t.length) return false;
+
+    const count = {};
+    const length = s.length;
+
+    for (let i = 0; i < length; i++) {
+        if (!count[s[i]]) count[s[i]] = 0;
+        if (!count[t[i]]) count[t[i]] = 0;
+
+        count[s[i]]++
+        count[t[i]]--
+    }
+
+    for (let char in count) {
+        if (count[char] !== 0) return false;
+    }
+
+    return true;
+};
