@@ -36,3 +36,21 @@ class Solution:
             hash[n] = i
         
         return 
+
+
+## Javascript Solution
+
+var twoSum = function(nums, target) {
+   let obj = {};
+
+   for (let i = 0; i < nums.length; i++) {
+       let num = nums[i]
+       let diff = target - num;
+
+       if (diff in obj) return [obj[diff], i]
+
+       obj[num] = i
+   }
+
+   return 
+};
