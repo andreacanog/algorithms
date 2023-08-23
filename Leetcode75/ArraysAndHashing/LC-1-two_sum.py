@@ -19,3 +19,20 @@
 
 # Input: nums = [3,3], target = 6
 # Output: [0,1]
+
+## Time Complexity: O(n) bc we are iterating through the array once and the lookup time for hash is O(1)  
+## Space Complexity: O(n) bc we are storing the values in the hash table
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hash = {}
+
+        for i, n in enumerate(nums):
+            diff = target - n
+
+            if diff in hash:
+                return [hash[diff], i]
+            
+            hash[n] = i
+        
+        return 
