@@ -20,6 +20,9 @@
 
 # Follow up: Your algorithm's time complexity must be better than O(n log n), where n is the array's size.
 
+## time complexity: O(n)
+## space complexity: O(n)
+
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
         count = {}
