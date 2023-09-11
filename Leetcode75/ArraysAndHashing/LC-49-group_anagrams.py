@@ -38,3 +38,16 @@ class Solution:
 
 # Javascript Solution
 
+var groupAnagrams = function(strs) {
+    let anagramMap = new Map();
+    
+    for (let str of strs) {
+        let currentStr = str.split("").sort().join("");
+        if (!anagramMap.has(currentStr)) {
+            anagramMap.set(currentStr, [])
+        }
+        anagramMap.get(currentStr).push(str)
+    }
+
+    return Array.from(anagramMap.values());
+};
