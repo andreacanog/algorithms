@@ -37,6 +37,7 @@ class Solution:
 
 
 # Javascript Solution
+## Time: O(nklogk) where n is the length of strs and k is the length of the longest string in strs
 
 var groupAnagrams = function(strs) {
     let anagramMap = new Map();
