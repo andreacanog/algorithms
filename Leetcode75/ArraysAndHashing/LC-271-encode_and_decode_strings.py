@@ -43,6 +43,8 @@
 # Input: dummy_input = [""]
 # Output: [""]
 
+## Time Complexity: O(n)
+## Space Complexity: O(n)
 
 class Codec:
     def encode(self, strs: List[str]) -> str:
@@ -76,6 +78,9 @@ class Codec:
 
 
 # Javascript solution
+
+## Time Complexity: O(n)
+## Space Complexity: O(n)
 
 var encode = function(strs) {
     let encoded = ""
