@@ -72,3 +72,32 @@ class Codec:
             i = j + 1 + length 
 
         return res
+
+
+
+# Javascript solution
+
+var encode = function(strs) {
+    let encoded = ""
+
+    for (let str of strs) {
+        encoded += str.length + "#" + str
+    }
+    return encoded
+};
+
+
+var decode = function(s) {
+    let res = []
+    let i = 0
+    while (i < s.length) {
+        let j = i
+        while (s[j] !== "#") {
+            j++
+        }
+        len = parseInt(s.slice(i,j))
+        res.push(s.slice(j + 1, j + 1 + len))
+        i = j + 1 + len
+    }
+    return res
+};
