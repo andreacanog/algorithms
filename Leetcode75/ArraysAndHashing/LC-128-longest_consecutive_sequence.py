@@ -34,3 +34,28 @@ class Solution:
         return longest
 
 
+
+## Javascript solution
+
+## time complexity: O(n)
+## space complexity: O(n)
+
+var longestConsecutive = function(nums) {
+    let numSet = new Set(nums);
+    let longest = 0;
+
+    for (let num of nums) {
+        if (!numSet.has(num - 1)) {
+            let length = 0
+
+            while (numSet.has(num + length)) {
+                length++
+            }
+            longest = Math.max(longest, length)
+        }
+    }
+
+    return longest
+    
+};
+
