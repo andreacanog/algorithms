@@ -36,5 +36,15 @@
 #  * @return {TreeNode}
 #  */
 var lowestCommonAncestor = function(root, p, q) {
-   
+   let curr = root;
+
+   while (curr) {
+    if (q.val > curr.val && p.val > curr.val) {
+        curr = curr.right
+    } else if (q.val < curr.val && p.val < curr.val){
+        curr = curr.left
+    } else {
+        return curr
+    }
+   }
 };
