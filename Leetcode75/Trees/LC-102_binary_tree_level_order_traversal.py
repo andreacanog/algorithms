@@ -27,5 +27,27 @@
 #  * @return {number[][]}
 #  */
 var levelOrder = function(root) {
-    
+    let res = [];
+    let queue = [root];
+
+    while (queue.length) {
+        let len = queue.length;
+        let level = [];
+
+        for (let i = 0; i < len; i++) {
+            let node = queue.shift();
+
+            if (node) {
+                levels.push(node);
+                queue.push(bode.left);
+                queue.push(node.right);
+            }
+        }
+
+        if (levels.length) {
+            res.push(levels);
+        }
+    }
+
+    return res;
 };
