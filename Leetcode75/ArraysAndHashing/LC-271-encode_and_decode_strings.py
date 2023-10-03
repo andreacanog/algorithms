@@ -1,4 +1,5 @@
-# Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network and is decoded back to the original list of strings.
+# Design an algorithm to encode a list of strings to a string. The encoded string is then sent over the network 
+# and is decoded back to the original list of strings.
 
 # Machine 1 (sender) has the function:
 
@@ -100,7 +101,7 @@ var decode = function(s) {
         while (s[j] !== "#") {
             j++
         }
-        len = parseInt(s.slice(i,j))
+        let len = parseInt(s.slice(i,j))
         res.push(s.slice(j + 1, j + 1 + len))
         i = j + 1 + len
     }
