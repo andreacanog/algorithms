@@ -24,7 +24,9 @@
 # Output: [1,2]
 # Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
  
-
+## Python Solution
+## Time Complexity: O(N)
+## Space Complexity: O(1)
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         left, right = 0, len(numbers) - 1
@@ -41,4 +43,26 @@ class Solution:
                 right -= 1
         
         return [-1, -1]
-        
+
+
+## JavaScript Solution
+## Time Complexity: O(N)
+## Space Complexity: O(1)
+
+var twoSum = function(numbers, target) {
+    let left = 0; 
+    let right = numbers.length - 1
+
+    while (left < right) {
+        let current = numbers[left] + numbers[right];
+
+        if (current === target) return [left + 1, right + 1];
+
+        if (current < target) {
+            left++
+        } else {
+            right --
+        }
+    }
+    
+};
