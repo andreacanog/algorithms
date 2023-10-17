@@ -30,3 +30,25 @@ class Solution:
             buy = min(current, buy)
 
         return maxProf
+    
+
+## Javascript solution
+
+# /**
+#  * @param {number[]} prices
+#  * @return {number}
+#  */
+# var maxProfit = function(prices) {
+#     let maxProfit = 0;
+#     let buy = prices[0];
+
+#     for (let i = 1; i < prices.length; i++) {
+#         let currentPrice = prices[i];
+#         let profit = currentPrice - buy; 
+
+#         maxProfit = Math.max(maxProfit, profit);
+#         buy = Math.min(buy, currentPrice)
+#     }
+    
+#     return maxProfit;
+# }
