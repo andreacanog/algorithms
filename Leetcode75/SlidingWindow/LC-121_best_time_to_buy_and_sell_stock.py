@@ -34,10 +34,7 @@ class Solution:
 
 ## Javascript solution
 
-# /**
-#  * @param {number[]} prices
-#  * @return {number}
-#  */
+
 # var maxProfit = function(prices) {
 #     let maxProfit = 0;
 #     let buy = prices[0];
