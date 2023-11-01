@@ -65,3 +65,46 @@ class Solution:
                     left += 1
         left, right = res
         return s[left:right + 1] if resLen != float("infinity") else ""
+    
+
+# JavaScript 
+
+var minWindow = function(s, t) {
+    if (t === "") return ""
+
+    let window = new Map(), countT = new Map();
+
+    for (let char of t) {
+        countT.set(char, countT.get(char) + 1 || 1)
+    }
+
+    have = 0, need = countT.size
+    let res = [-1,-1], resLen = Infinity
+    let left = 0
+    let right;
+    for (right = 0; right < s.length; right++) {
+        let char = s[right]
+        window.set(char, window.get(char) + 1 || 1)
+
+        if (countT.has(char) && window.get(char) === countT.get(char)) {
+            have++;
+        }
+
+        while (have === need) {
+            //update our results
+            if ((right - left + 1) < resLen) {
+                resLen = (right - left + 1)
+                res = [left, right]
+            }
+            // pop from the left of the string
+            window.set(s[left], window.get(s[left]) - 1)
+            if (countT.has(s[left]) && window.get(s[left]) < countT.get(s[left])) {
+                have--;
+            }
+            left++
+        }
+    }
+    console.log(res)
+    let [l, r] = res
+    return resLen !== Infinity ? s.slice(l, r + 1) : "" 
+};
